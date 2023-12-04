@@ -16,7 +16,7 @@
     - DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(),'DATE_OF_BIRTH')), '%Y').
         1. (NOW(), `date_of_birth`) = Restituisce data e ora correnti
         2. DATEDIFF() = Restituisce la differenza tra due valori di data, in anni
-        3. FROM_DAYS(), '%Y' = Restituisce una data da una rappresentazione numerica del giorno
+        3. FROM_DAYS() = Restituisce una data da una rappresentazione numerica del giorno
         4. DATE_FORMAT('%Y') = formatta una data come specificato, %Y  ANNO come valore numerico a 4 cifre
 
 
@@ -27,9 +27,13 @@
     - SELECT * FROM `courses` WHERE `period` LIKE 'I%' AND `year` = 1;
     - SELECT * FROM `courses` WHERE `period` LIKE 'I%' AND `year` = '1';
 
-5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dop le 14) del 20/06/2020 (21) 
+5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dop le 14) del 20/06/2020 (21)
+
+    - SELECT * FROM `exams` WHERE `hour` >= '14%' AND `date` = '2020-06-20';
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
+
+    - SELECT * FROM `degrees` WHERE `level` LIKE 'magistrale';   
 
 7. Da quanti dipartimenti è composta l'università? (12)
 
