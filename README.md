@@ -29,7 +29,7 @@
         FROM `students` 
         WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`,CURRENT_DATE ) > 30;
 
-    -   SELECT * , DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0 AS age 
+    -   SELECT * , DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)),     '%Y') + 0 AS age 
         FROM `students` 
         WHERE DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `date_of_birth`)), '%Y') + 0 >= 30 
         ORDER BY `date_of_birth` DESC;
