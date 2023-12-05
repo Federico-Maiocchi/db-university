@@ -110,7 +110,7 @@ GROUP BY
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
-    -   SELECT COUNT(`student_id`), AVG(`vote`) AS `media_voto` 
+    -   SELECT COUNT(`exam_id`), AVG(`vote`) AS `media_voto` 
         FROM `exam_student`
         GROUP BY `exam_id`;
 
@@ -134,6 +134,13 @@ INNER JOIN
 
 2. Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di
 Neuroscienze
+
+SELECT `degrees`.`level`, `departments`.`name` 
+FROM `degrees`
+INNER JOIN `departments`
+ON `departments`.id = `degrees`.`department_id`
+WHERE `degrees`.`level` = 'magistrale' 
+AND `departments`.`name` = 'Dipartimento di Neuroscienze';
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
 
