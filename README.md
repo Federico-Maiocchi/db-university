@@ -106,7 +106,7 @@ GROUP BY
     -   SELECT COUNT(`id`) AS `insegnanti`,`office_address`  
         FROM `teachers`
         GROUP BY `office_address`
-        HAVING COUNT(`id`) > 1;
+        <!-- HAVING COUNT(`id`) > 1; -->
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
@@ -155,6 +155,14 @@ AND `departments`.`name` = 'Dipartimento di Neuroscienze';
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
 sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
 nome
+
+SELECT `students`.`surname`,`students`.`name`, `degrees`.`name`, `departments`.`name`
+FROM `students`
+INNER JOIN `degrees`
+ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments`
+ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY `students`.`surname`;
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
