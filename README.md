@@ -196,4 +196,13 @@ ORDER BY `teachers`.`surname`;
 per ogni esame, stampando anche il voto massimo. Successivamente,
 filtrare i tentativi con voto minimo 18.
 
+SELECT  CONCAT(`students`.`surname`, ' ' , `students`.`name`) AS `full_name`,
+		COUNT(`courses`.`name`) AS `tentativi`
+FROM `students`
+INNER JOIN `exam_student` ON `exam_student`.`student_id` = `students`.`id`
+INNER JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id`
+INNER JOIN `courses`ON `courses`.`id` = `exams`.`course_id`
+WHERE `students`.`registration_number` = 620320
+GROUP BY CONCAT(`students`.`surname`, ' ' , `students`.`name`),`courses`.`name`;
+
 
