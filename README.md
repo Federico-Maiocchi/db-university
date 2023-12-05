@@ -103,13 +103,16 @@ GROUP BY
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-
     -   SELECT COUNT(`id`) AS `insegnanti`,`office_address`  
         FROM `teachers`
         GROUP BY `office_address`
         HAVING COUNT(`id`) > 1;
 
 3. Calcolare la media dei voti di ogni appello d'esame
+
+    -   SELECT COUNT(`student_id`), AVG(`vote`) AS `media_voto` 
+        FROM `exam_student`
+        GROUP BY `exam_id`;
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
