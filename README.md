@@ -116,6 +116,10 @@ GROUP BY
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
+    -   SELECT COUNT(`name`) AS `corsi_di_laurea`, `department_id`
+        FROM `degrees`
+        GROUP BY `department_id`;
+
 <!-- ////////////////////////////////////////////////////////////////////// -->
 
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
